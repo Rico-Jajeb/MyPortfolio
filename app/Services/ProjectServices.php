@@ -17,4 +17,11 @@ class ProjectServices
         ]);
         //Amo ini an code para han pag insert ngadto ha database table 'Project'
     }
+
+    public function getAllProject()
+    {
+        //amo liwat ini na code an pag kuha tanan na project data ha database
+        return Project::all();
+    }
+
 }

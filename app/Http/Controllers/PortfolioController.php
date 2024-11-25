@@ -20,23 +20,23 @@ class PortfolioController extends Controller
     }
 
 
-    
-   
-
     public function addProject(ProjectRequest $request)
     {
-        $validated = $request->validated();
-        $this->projectServices->create($validated);
-        //bali an code para han create aadto ha services
+        $validated = $request->validated();//bali an validation adto ha request  
+        $this->projectServices->create($validated); //bali an code para han create aadto ha services
         $projName = $validated['name']; //para ini han pag display name ngadto han pop up msg pag nag insert
         return redirect()->back()->with('success', "Project '{$projName}' added successfully!");
     }
 
 
-
-    public function displayProjects(){
-        return Inertia::render('AdminPages/Projects');
+    public function displayProjects()
+    {
+        $projects = $this->projectServices->getAllProject();//bali an code para han pagkuha database adto projectservices
+        return Inertia::render('AdminPages/Projects', [
+            'projects' => $projects,
+        ]);
     }
+
 
 
 }
