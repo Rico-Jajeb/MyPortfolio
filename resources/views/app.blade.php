@@ -10,6 +10,13 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
+        <!-- PrimeVue Library -->
+        <link rel="stylesheet" href="https://unpkg.com/primevue/resources/primevue.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/primevue/resources/themes/saga-blue/theme.css">
+        <link rel="stylesheet" href="https://unpkg.com/primeicons/primeicons.css">
+        <script src="https://unpkg.com/vue@3"></script> <!-- Vue.js -->
+        <script src="https://unpkg.com/primevue/config"></script> <!-- PrimeVue -->
+        
         <!-- Scripts -->
         @routes
         @vite(['resources/js/app.js', "resources/js/Pages/{$page['component']}.vue"])

@@ -30,7 +30,8 @@ Route::middleware([
 
 
 
-Route::get('/about-us', [PageController::class, 'aboutUs']);
-Route::get('/contact-us', [PageController::class, 'contactUs']);
+Route::get('/about-us', [PageController::class, 'aboutUs'])->name('about-us');
+Route::get('/contact-us', [PageController::class, 'contactUs'])->name('contact-us');
 
-Route::post('/projects', [PortfolioController::class, 'addProj']);
+Route::post('/add-Project', [PortfolioController::class, 'addProject'])->name('addProject');
+Route::get('/portfolio', [PortfolioController::class, 'displayProjects'])->name('portfolio');

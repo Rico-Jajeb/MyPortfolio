@@ -6,7 +6,7 @@ use App\Models\Project;
 
 class ProjectServices
 {
- 
+
     public function create(array $data)
     {
         return Project::create([

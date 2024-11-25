@@ -7,6 +7,7 @@ use App\Models\Project; // Import the Project model
 use App\Http\Requests\ProjectRequest;
 
 use App\Services\ProjectServices;
+use Inertia\Inertia;
 
 class PortfolioController extends Controller
 {
@@ -19,14 +20,22 @@ class PortfolioController extends Controller
     }
 
 
-    public function addProj(ProjectRequest $request)
+    
+   
+
+    public function addProject(ProjectRequest $request)
     {
         $validated = $request->validated();
-
         $this->projectServices->create($validated);
         //bali an code para han create aadto ha services
-        
-        return back()->with('success', 'Project added successfully!');
+        $projName = $validated['name']; //para ini han pag display name ngadto han pop up msg pag nag insert
+        return redirect()->back()->with('success', "Project '{$projName}' added successfully!");
+    }
+
+
+
+    public function displayProjects(){
+        return Inertia::render('AdminPages/Projects');
     }
 
 
